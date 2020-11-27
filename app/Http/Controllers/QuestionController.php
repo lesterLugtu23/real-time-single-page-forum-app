@@ -70,9 +70,10 @@ class QuestionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Question $question)
     {
-        //
+        $question->update($request->all());
+        return response('Updated', 202);
     }
 
     /**
