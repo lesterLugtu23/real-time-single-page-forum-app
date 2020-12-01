@@ -1,6 +1,6 @@
 <template>
-  <v-form @submit.prevent="login">
-    <v-container>
+  <v-container>
+    <v-form @submit.prevent="login">
       <v-row>
         <v-col
           cols="12"
@@ -21,7 +21,7 @@
           <v-text-field
             v-model="form.password"
             type="password"
-            label="E-mail"
+            label="Password"
             required
           ></v-text-field>
         </v-col>
@@ -32,8 +32,8 @@
       >
           Login
       </v-btn>
-    </v-container>
-  </v-form>
+    </v-form>
+  </v-container>
 </template>
 
 <script>
@@ -48,9 +48,7 @@ export default {
     },
     methods: {
         login() {
-            axios.post('/api/auth/login', this.form)
-            .then(res => console.log(res.data))
-            .catch(error => console.log(error.response.data))
+            User.login(this.form)
         }
     }
 }

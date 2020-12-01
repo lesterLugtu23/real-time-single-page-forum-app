@@ -11,7 +11,11 @@ import Vue from 'vue';
 import Vuetify from 'vuetify';
 import router from './router/router'
 
+
 Vue.use (Vuetify);
+
+import User from './Helpers/User';
+window.User = User
 
 
 /**
